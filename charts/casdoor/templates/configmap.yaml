@@ -1,0 +1,16 @@
+{{- if .Values.configMap}}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "casdoor.fullname" . }}-config
+  labels:
+    release: {{ .Release.Name | quote }}
+    chart: "{{ .Chart.Name }}"
+    app: "{{ template "casdoor.fullname" . }}"
+data:
+{{- range $path, $config := .Values.configMap}}
+  {{ $path }}: |
+{{ $config | indent 4 -}}
+{{- end -}}
+{{- end -}}
