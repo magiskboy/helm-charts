@@ -9,8 +9,8 @@ metadata:
     chart: "{{ .Chart.Name }}"
     app: "{{ template "casdoor.fullname" . }}"
 data:
-{{- range $path, $config := .Values.configMap}}
-  {{ $path }}: |
-{{ $config | indent 4 -}}
+{{- range .Values.configMap}}
+  {{ .path }}: |
+{{ .config | indent 4 -}}
 {{- end -}}
 {{- end -}}
