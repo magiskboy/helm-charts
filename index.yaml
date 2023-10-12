@@ -3,12 +3,12 @@ entries:
   casdoor:
   - apiVersion: v2
     appVersion: latest
-    created: "2023-10-12T08:43:11.450316058Z"
+    created: "2023-10-12T09:52:55.92911422Z"
     description: A Helm chart for Kubernetes
-    digest: a8c0ab9f93d0653c28af64a025172067e4269fc9ccd0dc1b8066922f274a2b5f
+    digest: 6c28fc8d40008a5a4c2b25a1ee7f67eab7768b3207c4d3b9e9e38267556c0f62
     name: casdoor
     type: application
     urls:
     - https://magiskboy.github.io/helm-charts/casdoor-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-12T08:43:11.449525834Z"
+generated: "2023-10-12T09:52:55.928257282Z"
