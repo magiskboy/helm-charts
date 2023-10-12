@@ -1,0 +1,18 @@
+{{- if .Values.apisixRoute -}}
+{{- $fullName := include "casdoor.fullname" . -}}
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: {{ $fullName }}
+spec:
+  http:
+    - name: {{ $fullName }}-route
+      match:
+        hosts:
+          - {{ .Values.apisixRoute.host }}
+        paths:
+          - /*
+      backends:
+        - serviceName: {{ .Values.apisixRoute.backendService }}
+          servicePort: {{ .Values.apisixRoute.backendPort }}
+{{- end }}
